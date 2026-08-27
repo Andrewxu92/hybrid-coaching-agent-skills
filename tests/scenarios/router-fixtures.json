@@ -18,5 +18,5 @@
   {"id":"S17","intent":"audit_gap_alignment","prompt":"我的Endurance是60，但计划大部分训练都是纯力量，请审查。","primary":"hyrox-plan-audit"},
   {"id":"S18","intent":"explicit_skill","prompt":"直接调用endurance-method-selector帮我选耐力方法。","primary":"endurance-method-selector"},
   {"id":"S19","intent":"hyrox_full","prompt":"我要HYROX完整备赛，从能力评估开始。","primary":"hyrox-coach"},
-  {"id":"S20","intent":"generic_ambiguous","prompt":"怎么训练才能变强？","primary":"clarify_or_contextual_entry"}
+  {"id":"S20","intent":"generic_ambiguous","prompt":"怎么训练才能变强？","primary":"hybrid-coach"}
 ]

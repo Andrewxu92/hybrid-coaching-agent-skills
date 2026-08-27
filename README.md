@@ -101,15 +101,14 @@ This repo is intentionally an overlay rather than a frozen mirror of the upstrea
 ./integration/install-overlay.sh /path/to/skill-for-hirox
 ```
 
-The installer adds the six intelligence skills plus the `hybrid-coach` router, patches the four HYROX boundary skills, and preserves the upstream training and nutrition skills.
+The installer copies the seven intelligence skills into `hybrid-core-skills/`, patches the four HYROX boundary skills under `hyrox-skills/`, and preserves the upstream training and nutrition skills. It exits if that upstream layout is missing.
 
 ## Validate locally
 
+Requires Python 3.9+ and PyYAML (`python3 -m pip install pyyaml`).
+
 ```bash
-python scripts/validate_skills.py
-python tests/scripts/router-regression.py
-python tests/scripts/semantic-acceptance.py
-python tests/scripts/install-smoke.py
+bash scripts/run_validation.sh
 ```
 
 The local checks are deterministic structure/contract checks. They do not pretend to be a substitute for evaluating the skills inside a real Skills-compatible agent client.

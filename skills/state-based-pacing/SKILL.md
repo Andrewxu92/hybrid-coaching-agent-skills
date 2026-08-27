@@ -3,7 +3,7 @@ name: state-based-pacing
 description: >-
   Select an immediate HYROX pacing action from current HR, pace, breathing, fatigue, target pace, current station, and next demand. Use during racing or race simulations when a static target pace is insufficient, especially when HR is already high before a demanding station.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "execution"
 ---
 # State-Based Pacing

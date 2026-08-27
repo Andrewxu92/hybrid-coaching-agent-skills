@@ -19,19 +19,21 @@ Prefer a small Skill with focused references over a large Skill containing every
 
 Run:
 
+Requires Python 3.9+ and PyYAML (`python3 -m pip install pyyaml`).
+
 ```bash
-python scripts/validate_skills.py
-python tests/scripts/router-regression.py
-python tests/scripts/semantic-acceptance.py
-python tests/scripts/install-smoke.py
+bash scripts/run_validation.sh
 ```
 
 ## Routing changes
 
 Any change to trigger or dispatch behavior must update:
 
-- `docs-orchestration` equivalents in `docs/ARCHITECTURE.md`
+- `docs/orchestration/routing-matrix.md`
+- `docs/orchestration/agent-routing.md`
+- `docs/ARCHITECTURE.md` when the layer map changes
 - `tests/scenarios/routing.json`
 - `tests/expected/routing-expected.json`
+- `tests/scenarios/router-fixtures.json`
 
 The principle is intent specificity: explicit single-purpose requests should route to the narrowest skill available.

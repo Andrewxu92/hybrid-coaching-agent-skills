@@ -3,7 +3,7 @@ name: capability-gap-analysis
 description: >-
   Compare an athlete's Strength, Speed, and Endurance profile with a known sport or HYROX demand profile and rank simple capability gaps. Use when the user asks "我最缺什么/短板是什么/距离目标差多少". Use `Gap = Demand - Athlete`; do not add weighting unless explicitly provided.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "athlete-intelligence"
 ---
 # Capability Gap Analysis
@@ -17,7 +17,7 @@ Identify the simplest useful difference between current athlete capacity and req
 3. For each available core dimension calculate `gap = demand - athlete`.
 4. Rank positive gaps from largest to smallest.
 5. Treat near-zero gaps as currently sufficient and negative gaps as non-priority capacity.
-6. Do not add weighting factors in v0.4.
+6. Do not add weighting factors unless the user or demand profile explicitly provides them.
 
 ## Output
 ```yaml

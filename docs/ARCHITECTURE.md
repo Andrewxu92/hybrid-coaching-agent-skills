@@ -80,6 +80,10 @@ Use the narrowest correct skill:
 
 Do not run the entire coaching chain for a question that needs one answer.
 
+## Deferred layer
+
+`Monitoring / Adjustment` remains in the coaching loop, but it is not a standalone skill in this package. Until there is explicit source evidence for a dedicated monitor skill, reuse upstream load, audit, and planning feedback rather than inventing a new rule set.
+
 ## Upstream integration
 
-This repository does not clone the upstream `skill-for-hirox` training engine. The integration overlay adds the intelligence layer and proposes boundary patches for the upstream HYROX umbrella skills.
+This repository does not clone the upstream `skill-for-hirox` training engine. The integration overlay adds the intelligence layer and proposes boundary patches for the four upstream HYROX umbrella skills under `hyrox-skills/`.

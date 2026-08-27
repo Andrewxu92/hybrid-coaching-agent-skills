@@ -3,7 +3,7 @@ name: adaptation-target-selector
 description: >-
   Select the smallest useful desired training adaptation from a capability gap and, when available, a performance-limitation hypothesis. Use when the user asks "下一步提高什么/训练目标是什么". Hand off to existing strength, endurance, speed, periodization, or session skills for detailed programming.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "decision"
 ---
 # Adaptation Target Selector

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 from pathlib import Path
 import re
 import sys
@@ -6,14 +7,46 @@ import sys
 try:
     import yaml
 except ImportError:
-    print("ERROR: PyYAML is required. Install with: python -m pip install pyyaml", file=sys.stderr)
+    print("ERROR: PyYAML is required. Install with: python3 -m pip install pyyaml", file=sys.stderr)
     raise SystemExit(2)
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = sorted(p.parent for p in (ROOT / "skills").glob("*/SKILL.md"))
-PATCHES = sorted(p.parent for p in (ROOT / "integration" / "patch").glob("*/SKILL.md"))
+PATCHES = sorted(
+    p.parent
+    for p in (ROOT / "integration" / "patch").glob("*/SKILL.md")
+    if p.parent.name != "patch"
+)
 errors = []
 checked = []
+
+nested_patch = ROOT / "integration" / "patch" / "patch"
+if nested_patch.exists():
+    errors.append("stale nested overlay directory: integration/patch/patch/")
+
+manifest_path = ROOT / "repository-manifest.json"
+static_path = ROOT / "tests" / "expected" / "static-validation.json"
+version_path = ROOT / "VERSION"
+if manifest_path.exists():
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("canonical_skill_count") != len(SKILLS):
+        errors.append(
+            "repository-manifest canonical_skill_count does not match skills/"
+        )
+    if manifest.get("integration_patch_count") != len(PATCHES):
+        errors.append(
+            "repository-manifest integration_patch_count does not match integration/patch/"
+        )
+    if version_path.exists() and version_path.read_text(encoding="utf-8").strip() != manifest.get("version"):
+        errors.append("VERSION does not match repository-manifest.json version")
+if static_path.exists():
+    static = json.loads(static_path.read_text(encoding="utf-8"))
+    actual_skills = ["skills/{0}/SKILL.md".format(p.name) for p in SKILLS]
+    actual_patches = ["integration/patch/{0}/SKILL.md".format(p.name) for p in PATCHES]
+    if static.get("canonical_skills") != actual_skills:
+        errors.append("tests/expected/static-validation.json canonical_skills mismatch")
+    if static.get("integration_patches") != actual_patches:
+        errors.append("tests/expected/static-validation.json integration_patches mismatch")
 
 name_re = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*$")
 

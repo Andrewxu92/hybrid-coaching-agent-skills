@@ -3,7 +3,7 @@ name: performance-limitation-screen
 description: >-
   Screen observable performance-limitation patterns using HR, pace, breathing, fatigue, RPE, and task response. Use when a meaningful capability gap exists but the useful training target depends on understanding whether the pattern is central, peripheral, threshold/metabolic, fatigue-related, or unclear. This is a performance hypothesis, not a medical diagnosis.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "diagnostic-screen"
 ---
 # Performance Limitation Screen

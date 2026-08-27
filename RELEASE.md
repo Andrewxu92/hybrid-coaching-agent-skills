@@ -1,4 +1,4 @@
-# Release 0.1.0
+# Release 0.1.1
 
 ## Recommended GitHub repository name
 
@@ -15,7 +15,6 @@ Upload the entire repository contents. The canonical distributable directory is 
 ## First checks after upload
 
 ```bash
-python scripts/validate_skills.py
 bash scripts/run_validation.sh
 ```
 

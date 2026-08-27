@@ -1,4 +1,4 @@
-# Rule Cards v0.4
+# Rule Cards v0.1.1
 
 Legend: SOURCE = explicitly present in supplied material; INFERENCE = operational rule inferred from source structure; RESEARCH = supported or qualified by external literature.
 
@@ -27,7 +27,7 @@ Status: CONFIRMED DECISION + INFERENCE
 ## Gap and diagnosis
 
 ### R-DIAG-001
-`Gap = Demand - Athlete` is the default v0.4 gap calculation.
+`Gap = Demand - Athlete` is the default first-version gap calculation.
 
 Status: CONFIRMED DECISION
 
@@ -73,7 +73,7 @@ Status: INFERENCE / simplicity principle
 ### R-HY-001
 Operational Hybrid is present when multiple meaningful demands are linked with limited/continuous recovery and the earlier task changes the subsequent performance state.
 
-Status: INFERENCE / v0.4 working definition
+Status: INFERENCE / current working definition
 
 ### R-HY-002
 General → Specific → Hybrid → Performance is the default transfer ladder.

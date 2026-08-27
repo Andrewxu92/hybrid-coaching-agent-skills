@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 — Package hygiene
+
+- Removed the stale nested `integration/patch/patch/` copy of the HYROX boundary patches.
+- Normalized leftover `v0.4` labels to the current package version.
+- Made local validation run on Python 3.9+ and check skill files instead of only matching fixture keywords.
+- Tightened the overlay installer so it requires the upstream `hyrox-skills/` layout used by `skill-for-hirox`.
+- Documented that monitoring/adjustment is deferred rather than implied as a missing skill.
+
 ## 0.1.0 — Initial standalone package
 
 - Packaged the Hybrid coaching intelligence layer as a standalone GitHub repository.

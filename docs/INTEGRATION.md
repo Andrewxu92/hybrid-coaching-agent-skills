@@ -25,7 +25,8 @@ The overlay:
 1. Adds the seven core intelligence skills.
 2. Applies the four HYROX boundary patches.
 3. Leaves upstream training and nutrition skills intact.
-4. Creates one-time backups for the patched HYROX skill files.
+4. Creates one-time backups for the patched HYROX skill files (`*.pre-v0.1.1.bak`).
+5. Exits if `hyrox-skills/{hyrox-coach,hyrox-needs-profile,hyrox-week-template,hyrox-plan-audit}` is missing.
 
 Review the generated backup files before committing the integration to the upstream repository.
 

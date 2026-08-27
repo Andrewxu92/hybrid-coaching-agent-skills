@@ -1,35 +1,80 @@
+#!/usr/bin/env python3
+"""Check routing fixtures against expected routes and local skill files."""
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-scenarios = json.loads((ROOT / "tests/scenarios/routing.json").read_text(encoding="utf-8"))
+UPSTREAM_ONLY = {
+    "strength-method-selector",
+    "endurance-method-selector",
+    "speed-agility-method-selector",
+    "periodization-planner",
+    "session-plan-builder",
+}
 
-def expected_route(s):
-    p = s["prompt"]
-    if "直接调用" in p or "@skill" in p:
-        if "endurance-method-selector" in p: return "endurance-method-selector"
-    if "完整HYROX" in p or "完整备赛体系" in p or "我要HYROX完整备赛" in p: return "hyrox-coach"
-    if "比赛现在" in p or ("下一站" in p and "HR" in p): return "state-based-pacing"
-    if "HYROX到底需要" in p: return "hyrox-needs-profile"
-    if "审计" in p or ("计划" in p and "Endurance" in p): return "hyrox-plan-audit"
-    if "排下周HYROX" in p: return "hyrox-week-template"
-    if "力量、速度、耐力分别怎么样" in p or "没有任何测试数据" in p: return "athlete-capability-profile"
-    if "最短板" in p or "Demand" in p: return "capability-gap-analysis"
-    if "为什么我HR很高" in p or "HR高但RPE低" in p: return "performance-limitation-screen"
-    if "下一步应该提升什么" in p: return "adaptation-target-selector"
-    if "算Hybrid吗" in p: return "hybrid-transfer-selector"
-    if "已经决定练最大力量" in p: return "strength-method-selector"
-    if "怎么训练才能变强" in p: return "hybrid-coach"
-    return None
 
-errors = []
-for s in scenarios:
-    got = expected_route(s)
-    if got != s["primary"]:
-        errors.append(f"{s["id"]}: expected {s["primary"]}, got {got}")
-print(f"Routing fixtures: {len(scenarios)}")
-if errors:
-    print("FAIL")
-    print("\n".join(errors))
-    raise SystemExit(1)
-print("PASS")
+def local_skill_names():
+    names = set(p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md"))
+    names.update(
+        p.parent.name
+        for p in (ROOT / "integration" / "patch").glob("*/SKILL.md")
+        if p.parent.name != "patch"
+    )
+    return names
+
+
+def main():
+    scenarios = json.loads((ROOT / "tests/scenarios/routing.json").read_text(encoding="utf-8"))
+    expected = json.loads((ROOT / "tests/expected/routing-expected.json").read_text(encoding="utf-8"))["core"]
+    fixtures = json.loads((ROOT / "tests/scenarios/router-fixtures.json").read_text(encoding="utf-8"))
+    matrix = (ROOT / "docs/orchestration/routing-matrix.md").read_text(encoding="utf-8")
+    local = local_skill_names()
+    errors = []
+
+    if (ROOT / "integration/patch/patch").exists():
+        errors.append("stale nested overlay at integration/patch/patch/")
+
+    fixture_by_id = dict((row["id"], row) for row in fixtures)
+    if set(row["id"] for row in scenarios) != set(expected):
+        errors.append("routing.json ids do not match routing-expected.json")
+
+    for scenario in scenarios:
+        sid = scenario["id"]
+        primary = scenario["primary"]
+        exp = expected.get(sid)
+        fixture = fixture_by_id.get(sid)
+        if exp is None:
+            errors.append("{0}: missing acceptance expectation".format(sid))
+            continue
+        if exp["route"] != primary:
+            errors.append(
+                "{0}: expected route {1}, fixture primary {2}".format(
+                    sid, exp["route"], primary
+                )
+            )
+        if fixture is None:
+            errors.append("{0}: missing router-fixtures.json entry".format(sid))
+        elif fixture.get("primary") != primary:
+            errors.append(
+                "{0}: router-fixtures.json primary {1} != routing.json {2}".format(
+                    sid, fixture.get("primary"), primary
+                )
+            )
+        if not scenario["prompt"].strip():
+            errors.append("{0}: empty prompt".format(sid))
+        if primary in UPSTREAM_ONLY:
+            if primary not in matrix:
+                errors.append("{0}: upstream route {1} missing from routing matrix".format(sid, primary))
+        elif primary not in local:
+            errors.append("{0}: unknown local route {1}".format(sid, primary))
+
+    print("Routing fixtures: {0}".format(len(scenarios)))
+    if errors:
+        print("FAIL")
+        print("\n".join(errors))
+        raise SystemExit(1)
+    print("PASS")
+
+
+if __name__ == "__main__":
+    main()

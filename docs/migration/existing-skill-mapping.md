@@ -1,4 +1,4 @@
-# Existing Skill Mapping v0.4
+# Existing Skill Mapping v0.1.1
 
 The existing repository already provides the training engine: demand/individualization, capability periodization, method selection for strength/endurance/speed, load and ordering tools, planning, taper and audit. Its index explicitly states that the 16 atomic skills remain available while four umbrella skills are preferred for routine composite use. The new layer should therefore add intelligence rather than duplicate training mechanics.
 

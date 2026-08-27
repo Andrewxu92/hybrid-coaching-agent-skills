@@ -3,7 +3,7 @@ name: hybrid-coach
 description: >-
   Route broad Hybrid/HYROX coaching requests across athlete capability, demand, gaps, limitation screening, training targets, transfer, planning, and race-state execution. Use for compound requests or underspecified coaching requests. Explicit skill names and known single-method targets should bypass this router. For generic requests such as “怎么训练才能变强”, open a clarification gate rather than starting the full chain.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   role: "compound-router"
 ---
 # Hybrid Coach

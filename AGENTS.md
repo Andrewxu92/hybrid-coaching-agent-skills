@@ -19,7 +19,7 @@ This repository contains Agent Skills intended for Hybrid / HYROX coaching.
 6. Every Skill must state what it does and when it should trigger.
 7. Preserve the distinction between performance screening and medical diagnosis.
 8. When routing changes, update the routing matrix and scenario tests.
-9. Run `python scripts/validate_skills.py` before considering a Skill release-ready.
+9. Run `bash scripts/run_validation.sh` before considering a Skill release-ready.
 10. Update `CHANGELOG.md` for user-visible architecture or routing changes.
 
 ## Naming

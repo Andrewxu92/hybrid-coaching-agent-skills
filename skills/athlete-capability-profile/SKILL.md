@@ -3,7 +3,7 @@ name: athlete-capability-profile
 description: >-
   Build a lightweight athlete profile across Strength, Speed, and Endurance using validated scores or assessment evidence. Use when the user asks "我的力量/速度/耐力怎么样", needs a current capability summary, or wants an input for gap analysis or HYROX planning. Do not invent precise scores from vague self-description.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "athlete-intelligence"
 ---
 # Athlete Capability Profile

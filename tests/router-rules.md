@@ -1,4 +1,4 @@
-# Router acceptance rules v0.1.0
+# Router acceptance rules v0.1.1
 
 ## Direct-intent rules
 - Explicit `@skill:"..."` always wins.

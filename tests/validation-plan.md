@@ -1,7 +1,7 @@
-# Validation Plan v0.3
+# Validation Plan v0.1.1
 
 ## 目标
-验证新 6 个 Skills 不会把 Agent 路由回旧的 generic planner，也不会把不确定推断包装成确定结论。
+验证 7 个 canonical Skills 不会把 Agent 路由回旧的 generic planner，也不会把不确定推断包装成确定结论。
 
 ## Suite A — Discovery / routing
 

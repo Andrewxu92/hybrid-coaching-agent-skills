@@ -1,4 +1,4 @@
-# Integration Contract v0.1.0
+# Integration Contract v0.1.1
 
 This repository is a portable intelligence-layer package for the existing `skill-for-hirox` training engine.
 

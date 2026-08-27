@@ -3,7 +3,7 @@ name: hybrid-transfer-selector
 description: >-
   Judge whether a training stimulus is general, specific, hybrid, or performance-oriented based on meaningful task interaction and state carry-over, then choose the next transfer step. Use for questions such as "这个训练算 Hybrid 吗/什么时候加入专项混合训练". Hybrid is not a fourth scored capability and not simply two exercises combined.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   layer: "transfer"
 ---
 # Hybrid Transfer Selector

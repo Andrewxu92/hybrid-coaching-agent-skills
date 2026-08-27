@@ -1,7 +1,7 @@
 {
   "repository_name": "hybrid-coaching-agent-skills",
   "display_name": "Hybrid Coaching Agent Skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "canonical_skill_root": "skills/",
   "canonical_skill_count": 7,
   "integration_patch_count": 4,

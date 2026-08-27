@@ -1,4 +1,4 @@
-# Trigger Overlap Audit v0.4
+# Trigger Overlap Audit v0.1.1
 
 ## Main rule
 Route by **intent specificity**, not by keyword count.

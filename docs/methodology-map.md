@@ -1,4 +1,4 @@
-# Hybrid Coaching Methodology Map v0.4
+# Hybrid Coaching Methodology Map v0.1.1
 
 ## Locked architecture
 
@@ -6,7 +6,7 @@
 - Each capability may be understood through Basic → Specific → Hybrid expression, but these are not required to be separate scored fields.
 - Hybrid is not a fourth pillar. It is the expression of multiple demands/capabilities under a shared or carried-over fatigue state.
 - Core scores are continuous 0–100; 60 / 80 / 100 are benchmark anchors.
-- Capability gap is `Demand - Athlete` in v0.4.
+- Capability gap is `Demand - Athlete` in v0.1.1.
 
 ## Minimal coaching loop
 
