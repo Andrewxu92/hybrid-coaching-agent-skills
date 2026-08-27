@@ -1,0 +1,22 @@
+{
+  "base_repository": "https://github.com/Andrewxu92/skill-for-hirox",
+  "overlay_version": "0.1.0",
+  "new_skills": [
+    "hybrid-coach",
+    "athlete-capability-profile",
+    "capability-gap-analysis",
+    "performance-limitation-screen",
+    "adaptation-target-selector",
+    "hybrid-transfer-selector",
+    "state-based-pacing"
+  ],
+  "hyrox_patches": [
+    "hyrox-coach",
+    "hyrox-needs-profile",
+    "hyrox-week-template",
+    "hyrox-plan-audit"
+  ],
+  "strategy": "add_intelligence_layer_without_replacing_training_engine",
+  "upstream_sync": "overlay_against_external_repository",
+  "note": "Repository write access was not used; integration package contains the overlay and patches."
+}

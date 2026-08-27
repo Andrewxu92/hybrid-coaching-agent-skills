@@ -1,0 +1,84 @@
+{
+  "core": {
+    "S01": {
+      "route": "athlete-capability-profile",
+      "must": "return_three_core_scores_or_unknown"
+    },
+    "S02": {
+      "route": "capability-gap-analysis",
+      "must": "compare_athlete_with_demand"
+    },
+    "S03": {
+      "route": "performance-limitation-screen",
+      "must": "avoid_medical_diagnosis"
+    },
+    "S04": {
+      "route": "adaptation-target-selector",
+      "must": "choose_one_primary_target"
+    },
+    "S05": {
+      "route": "hybrid-transfer-selector",
+      "must": "use_state_carryover"
+    },
+    "S06": {
+      "route": "state-based-pacing",
+      "must": "return_one_immediate_action"
+    },
+    "S07": {
+      "route": "hyrox-needs-profile",
+      "must": "describe_sport_demand_only"
+    },
+    "S08": {
+      "route": "hyrox-week-template",
+      "must": "preserve_selected_priority"
+    },
+    "S09": {
+      "route": "hyrox-plan-audit",
+      "must": "audit_not_replace"
+    },
+    "S10": {
+      "route": "hyrox-coach",
+      "must": "delegate_compound_flow"
+    },
+    "S11": {
+      "route": "strength-method-selector",
+      "must": "bypass_diagnosis"
+    },
+    "S12": {
+      "route": "performance-limitation-screen",
+      "must": "allow_unclear_conflict"
+    },
+    "S13": {
+      "route": "capability-gap-analysis",
+      "must": "gap_90_minus_60_equals_30"
+    },
+    "S14": {
+      "route": "athlete-capability-profile",
+      "must": "use_unknown_not_fabrication"
+    },
+    "S15": {
+      "route": "hybrid-transfer-selector",
+      "must": "not_call_hybrid_if_state_reset_is_sufficient"
+    },
+    "S16": {
+      "route": "hybrid-transfer-selector",
+      "must": "recognize_meaningful_carryover"
+    },
+    "S17": {
+      "route": "hyrox-plan-audit",
+      "must": "check_gap_alignment"
+    },
+    "S18": {
+      "route": "endurance-method-selector",
+      "must": "explicit_skill_request_wins"
+    },
+    "S19": {
+      "route": "hyrox-coach",
+      "must": "start_with_assessment_then_delegate"
+    },
+    "S20": {
+      "route": "hybrid-coach",
+      "must": "open_clarification_gate_without_full_chain"
+    }
+  }
+}

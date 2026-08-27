@@ -1,0 +1,10 @@
+{
+  "repository_name": "hybrid-coaching-agent-skills",
+  "display_name": "Hybrid Coaching Agent Skills",
+  "version": "0.1.0",
+  "canonical_skill_root": "skills/",
+  "canonical_skill_count": 7,
+  "integration_patch_count": 4,
+  "upstream_dependency": "https://github.com/Andrewxu92/skill-for-hirox",
+  "agent_skills_spec": "https://github.com/agentskills/agentskills/blob/main/docs/specification.mdx"
+}

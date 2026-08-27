@@ -1,0 +1,22 @@
+[
+  {"id":"S01","intent":"capability_profile","prompt":"我现在力量、速度、耐力分别怎么样？已有三个分数。","primary":"athlete-capability-profile"},
+  {"id":"S02","intent":"gap","prompt":"我的HYROX最短板是什么？已有运动员三个分数。","primary":"capability-gap-analysis"},
+  {"id":"S03","intent":"limitation","prompt":"为什么我HR很高，但是1km配速越来越慢？","primary":"performance-limitation-screen"},
+  {"id":"S04","intent":"adaptation","prompt":"我的耐力明显不足，下一步应该提升什么？","primary":"adaptation-target-selector"},
+  {"id":"S05","intent":"hybrid","prompt":"4组Sled Push加500m跑，这算Hybrid吗？","primary":"hybrid-transfer-selector"},
+  {"id":"S06","intent":"pacing","prompt":"比赛现在HR已经很高，下一站Sled Push，我该怎么办？","primary":"state-based-pacing"},
+  {"id":"S07","intent":"demand","prompt":"HYROX到底需要哪些能力？","primary":"hyrox-needs-profile"},
+  {"id":"S08","intent":"weekly","prompt":"帮我排下周HYROX训练。","primary":"hyrox-week-template"},
+  {"id":"S09","intent":"audit","prompt":"审计这份HYROX训练计划。","primary":"hyrox-plan-audit"},
+  {"id":"S10","intent":"compound","prompt":"帮我做一个完整HYROX备赛体系。","primary":"hyrox-coach"},
+  {"id":"S11","intent":"known_method","prompt":"我已经决定练最大力量，具体怎么练？","primary":"strength-method-selector"},
+  {"id":"S12","intent":"unclear","prompt":"我数据互相冲突：HR高但RPE低，配速又下降。","primary":"performance-limitation-screen"},
+  {"id":"S13","intent":"gap_to_target","prompt":"Endurance 60，HYROX Demand 90，下一步怎么办？","primary":"capability-gap-analysis"},
+  {"id":"S14","intent":"missing_data","prompt":"我没有任何测试数据，只说自己觉得体能一般。","primary":"athlete-capability-profile"},
+  {"id":"S15","intent":"not_hybrid","prompt":"Sled Push后休息5分钟，再单独跑400m，这算Hybrid吗？","primary":"hybrid-transfer-selector"},
+  {"id":"S16","intent":"hybrid","prompt":"400m跑→Sled Push→500m跑，中间只有很短恢复，这算Hybrid吗？","primary":"hybrid-transfer-selector"},
+  {"id":"S17","intent":"audit_gap_alignment","prompt":"我的Endurance是60，但计划大部分训练都是纯力量，请审查。","primary":"hyrox-plan-audit"},
+  {"id":"S18","intent":"explicit_skill","prompt":"直接调用endurance-method-selector帮我选耐力方法。","primary":"endurance-method-selector"},
+  {"id":"S19","intent":"hyrox_full","prompt":"我要HYROX完整备赛，从能力评估开始。","primary":"hyrox-coach"},
+  {"id":"S20","intent":"generic_ambiguous","prompt":"怎么训练才能变强？","primary":"clarify_or_contextual_entry"}
+]

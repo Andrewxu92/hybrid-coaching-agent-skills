@@ -1,0 +1,20 @@
+{
+  "canonical_skill_count": 7,
+  "canonical_skills": [
+    "skills/adaptation-target-selector/SKILL.md",
+    "skills/athlete-capability-profile/SKILL.md",
+    "skills/capability-gap-analysis/SKILL.md",
+    "skills/hybrid-coach/SKILL.md",
+    "skills/hybrid-transfer-selector/SKILL.md",
+    "skills/performance-limitation-screen/SKILL.md",
+    "skills/state-based-pacing/SKILL.md"
+  ],
+  "integration_patch_count": 4,
+  "integration_patches": [
+    "integration/patch/hyrox-coach/SKILL.md",
+    "integration/patch/hyrox-needs-profile/SKILL.md",
+    "integration/patch/hyrox-plan-audit/SKILL.md",
+    "integration/patch/hyrox-week-template/SKILL.md"
+  ],
+  "errors": []
+}

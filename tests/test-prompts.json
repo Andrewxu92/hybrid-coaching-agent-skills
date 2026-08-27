@@ -1,0 +1,10 @@
+[
+  {"id":"T01","prompt":"我的Strength 78，Speed 84，Endurance 62，先帮我建立能力画像","expected":"athlete-capability-profile"},
+  {"id":"T02","prompt":"HYROX要求Strength 85、Speed 78、Endurance 90，我是82、86、68，哪里是最大缺口？","expected":"capability-gap-analysis"},
+  {"id":"T03","prompt":"我跑步时HR很高，但配速上不去，帮我判断可能卡在哪里","expected":"performance-limitation-screen"},
+  {"id":"T04","prompt":"Endurance是短板，我应该优先刺激什么适应？","expected":"adaptation-target-selector"},
+  {"id":"T05","prompt":"5轮400m跑+Sled Push，每轮间歇很短，这算Hybrid训练吗？","expected":"hybrid-transfer-selector"},
+  {"id":"T06","prompt":"HYROX比赛跑完这一公里HR已经很高，下一站是Sled Push，现在该怎么配速？","expected":"state-based-pacing"},
+  {"id":"T07","prompt":"给我排一周HYROX训练","expected":"hyrox-week-template"},
+  {"id":"T08","prompt":"这是我写好的4周HYROX计划，帮我审查","expected":"hyrox-plan-audit"}
+]
